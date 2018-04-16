@@ -56,16 +56,15 @@
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
                                     <h1><b>Stay in the know</b></h1>
-                                </div>
-                                <form action="/action_page.php">
-                                    First name:<br>
-                                    <input type="text" name="firstname" value=""><br>
-                                    Last name:<br>
-                                    <input type="text" name="lastname" value=""><br>
-                                    <b>Email:</b><br>
-                                    <input type="text" name="email"><br><br>
-                                    <input type="submit" value="Submit">
-                                </form>
+                                        <div class="contact-form">
+                                        <form method="post" action="/signup">
+                                        <label for="fullname">Full name:<label>
+                                        <input type="text" id= "fullname" name="fullname" required="required">
+                                        <label for="email">Email address:</label>
+                                        <input type="email" id="email" name="email" required="required">
+                                        <input type="submit" value="Submit" id="submitbutton">
+                                        </form>
+                                    </div>
                             </div>
                         </div>
                     </div>

@@ -250,9 +250,14 @@ p {
     -o-transition: 0.3s;
     transition: 0.3s; }
     .slider-link a:hover {
-      color: #fff; }
+      color: #ffffff; }
   .slider-link span {
     padding: 0 18px; }
+
+/* CSS for the form div */
+  .contact-form {
+    color: #fff;
+  }
 
 /* ==============================================================
    FIND PLACES
