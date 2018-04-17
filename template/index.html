@@ -76,9 +76,47 @@
         </div>
     </section>
 <!--// End of Slider -->
-    <!--============================= API =============================-->
+    <script>window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+
+          return t;
+        }(document, "script", "twitter-wjs"));</script>
+        <script>
+        twttr.ready(function () {
+          twttr.widgets.createTweet(
+                  '20',
+                  document.getElementById('createTweet'),
+                  {
+                    theme: 'white'
+                  }
+                );
+        });
+        
+        twttr.ready(function () {
+          twttr.widgets.createTweet(
+                  '20',
+                  document.getElementById('createTweet2'),
+                  {
+                    theme: 'white'
+                  }
+                );
+        });
+        </script><!--============================= API =============================-->
     <section class="main-block">
         <div class="container">
+            <div id="createTweet"></div>
+            <div id="createTweet2"></div>
         </div>
     </section>
     <!--//END -->
