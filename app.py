@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
+import tweepy
 
 app = Flask("MyApp")
 
@@ -15,15 +16,37 @@ port = int(os.environ.get("PORT", 5000))
 def localhost():
 	return render_template("index.html")
 
-@app.route("/search")
+@app.route("/search", methods=['POST'])
 def search():
-	search_term = form_data
+	search_term = request.form['search']
+	
+	tweet_ids = fetch_twitter_data(search_term)
+	return render_template("index.html", tweet_ids = tweet_ids)
 
-	fetchtwitterdata(search_term)
-	fetchnewsdata(search_term)
 
 def fetch_twitter_data(search_term):
-	data = request (url)
+#this is bad, move keys to config file
+	consumer_key = "ZtB8cA3gacvGCcRRlg6gwGNsL"
+	consumer_secret = "y5V6jWkTwN3isEpCuQZ8yyTkmgQqEfZRYRm91SnV2RlN2yiSBl"
+	access_token = "1969091970-gDAwKNYC9lT8b1PuKJmmnQJ0V61e5CxtoOxoLh9"
+	access_token_secret = "rDeFnM6UqlBLhZgErBVa9ro3huz9hCKbZQEue1zeKzPez"
+
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth.set_access_token(access_token, access_token_secret)
+
+	api = tweepy.API(auth)
+
+	if (not api):
+		print ("Problem connecting to API")
+
+	results = api.search(q= search_term)
+
+	tweet_ids = []
+
+	for result in results: 
+		tweet_ids.append(result.id)
+
+	return tweet_ids
 
 # ADJUSTMENT: Setup our application to run with the needed port.
 app.run(host='0.0.0.0', port=port, debug=True)

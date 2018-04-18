@@ -910,6 +910,11 @@ footer {
     font-weight: 400;
     padding: 14px 0; }
 
+#tweets-container {
+  width: 500px;
+  margin: 0 auto;
+ }    
+
 .follow-img {
   text-align: center;
   padding: 20px 16px;
@@ -948,5 +953,7 @@ footer {
 #map {
   height: 100%;
   width: 100%; }
+
+
 
 /*# sourceMappingURL=style.css.map */
