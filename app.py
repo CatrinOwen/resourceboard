@@ -11,7 +11,7 @@ mailgun_secret_key_value = os.environ.get('MAILGUN_SECRET_KEY', None)
 # assign a port for our application
 port = int(os.environ.get("PORT", 5000))
 
-@app.route("/localhost.py")
+@app.route("/")
 def localhost():
 	return render_template("index.html")
 
