@@ -11,8 +11,6 @@ mailgun_secret_key_value = os.environ.get('MAILGUN_SECRET_KEY', None)
 # assign a port for our application
 port = int(os.environ.get("PORT", 5000))
 
-port = int(os.environ.get("PORT", 5000))
-
 @app.route("/localhost.py")
 def localhost():
 	return render_template("index.html")
@@ -24,7 +22,7 @@ def search():
 	fetchtwitterdata(search_term)
 	fetchnewsdata(search_term)
 
-def fetch_twitter_data(search_term)
+def fetch_twitter_data(search_term):
 	data = request (url)
 
 #not sure if the below is needed??
