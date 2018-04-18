@@ -1,7 +1,9 @@
+from flask import Flask, render_template
 import os
-from flask import Flask, render_template, request
 
 app = Flask("MyApp")
+
+port = int(os.environ.get("PORT", 5000))
 
 @app.route("/localhost.py")
 def localhost():
