@@ -25,8 +25,5 @@ def search():
 def fetch_twitter_data(search_term):
 	data = request (url)
 
-#not sure if the below is needed??
-app.run(debug=True)
-
 # ADJUSTMENT: Setup our application to run with the needed port.
 app.run(host='0.0.0.0', port=port, debug=True)
